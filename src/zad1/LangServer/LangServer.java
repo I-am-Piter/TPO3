@@ -1,17 +1,14 @@
 package zad1.LangServer;
 
-import zad1.MainServer.MainHandler;
-
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LangServer {
+public class LangServer extends Thread{
     ServerSocket ss;
     Dict slownik;
 
@@ -28,10 +25,10 @@ public class LangServer {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        listen();
+        this.start();
     }
 
-    private void listen(){
+    public void run(){
         while(true){
             try {
                 Socket client = ss.accept();
@@ -51,10 +48,28 @@ public class LangServer {
 
         Dict ENDict = new Dict("EN",EN);
 
+        Map<String,String> FR = new HashMap<>();
+        FR.put("polska","pologne");
+        FR.put("dom","maison");
+        FR.put("informatyka","informatique");
+
+        Dict FRDict = new Dict("FR",FR);
+
+        Map<String,String> JP = new HashMap<>();
+        JP.put("polska","ポーランド");
+        JP.put("dom","家");
+        JP.put("informatyka","情報技術");
+
+        Dict JPDict = new Dict("JP",JP);
+
         try {
-            ServerSocket ss = new ServerSocket(2000);
-            LangServer ls = new LangServer(ss,ENDict);
+            int port = 2000;
+            new LangServer(new ServerSocket(port++),ENDict);
+            new LangServer(new ServerSocket(port++),FRDict);
+            new LangServer(new ServerSocket(port++),JPDict);
+
         } catch (IOException e) {
+            e.printStackTrace();
             throw new RuntimeException(Arrays.toString(e.getStackTrace()));
         }
 

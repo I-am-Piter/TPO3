@@ -1,33 +1,35 @@
 package zad1.ClientServer;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class ClientServer {
+    private int tmpPort;
 
     ClientServer(){
     }
 
-    public void getTransaltion(String polishWord){
+    public String getTransaltion(String polishWord,String langCode){
         try {
             Socket socket = new Socket("localhost",1000);
             PrintWriter output = new PrintWriter(socket.getOutputStream());
-            output.println(polishWord+",EN,1500");
+            tmpPort = (int)(Math.random()*1000+1);
+            output.println(polishWord+","+langCode+","+tmpPort);
             output.flush();
             output.close();
-            System.out.println(getAnswer());
+            return getAnswer();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     private String getAnswer() throws IOException {
-        ServerSocket ss = new ServerSocket(1500);
+        ServerSocket ss = new ServerSocket(tmpPort);
         Socket client = ss.accept();
 
         BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -46,11 +48,12 @@ public class ClientServer {
 
     public static void main(String[] args) {
         ClientServer cs = new ClientServer();
-        Scanner scanner = new Scanner(System.in);
-        while(true) {
-            System.out.println("wprowadz slowo");
-            cs.getTransaltion(scanner.nextLine());
-        }
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new ClientGui(cs);
+            }
+        });
     }
 
 }

@@ -13,7 +13,7 @@ public class MainServer{
 
     public MainServer(ServerSocket serverSocket){
         this.serverSocket = serverSocket;
-        NewLangListener newLang = new NewLangListener(this);
+        new NewLangListener(this);
         listen();
     }
     public LangServerInfo getLangServerInfo(String code){
@@ -40,7 +40,7 @@ public class MainServer{
     public static void main(String[] args) {
         try {
             ServerSocket socket = new ServerSocket(1000);
-            MainServer serwer = new MainServer(socket);
+            new MainServer(socket);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

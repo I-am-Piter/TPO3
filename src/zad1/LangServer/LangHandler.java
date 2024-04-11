@@ -30,15 +30,18 @@ public class LangHandler extends Thread{
             in.close();
             connection.close();
 
-            String tlumaczenie = slownik.getTranslation(data[0]);
+            String tlumaczenie = slownik.getTranslation(data[0].replaceAll(" ",""));
 
             int portKlienta = Integer.parseInt(data[2]);
             System.out.println(data[1]);
             Socket client = new Socket(data[1],portKlienta);
 
             out = new PrintWriter(client.getOutputStream());
-
-            out.println(tlumaczenie);
+            if(tlumaczenie != null) {
+                out.println(tlumaczenie);
+            }else{
+                out.println("brak slowa w bazie");
+            }
             out.flush();
             out.close();
             client.close();

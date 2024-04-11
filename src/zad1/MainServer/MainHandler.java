@@ -25,7 +25,6 @@ public class MainHandler extends Thread{
 
     public void run() {
         try {
-            System.out.println("mainhandler got connection");
             String input = "";
             String tmpInput = "";
             while((tmpInput = in.readLine()) != null){
@@ -34,14 +33,19 @@ public class MainHandler extends Thread{
             in.close();
             connection.close();
             String[] data = input.split(",");
-            LangServerInfo lsinfo = ms.getLangServerInfo(data[1]);
-            outSocket = new Socket(lsinfo.getAdress(),lsinfo.getPort());
-            out = new PrintWriter(new OutputStreamWriter(outSocket.getOutputStream()));
-            out.println(""+data[0]+","+clientAdress.toString().replaceAll("/", "")+","+data[2]);
+            LangServerInfo lsinfo = ms.getLangServerInfo(data[1].toUpperCase().replaceAll(" ",""));
+            if(lsinfo == null){
+                outSocket = new Socket(connection.getLocalAddress(), Integer.parseInt(data[2]));
+                out = new PrintWriter(new OutputStreamWriter(outSocket.getOutputStream()));
+                out.println("niepoprawne zapytanie");
+            }else {
+                outSocket = new Socket(lsinfo.getAdress(), lsinfo.getPort());
+                out = new PrintWriter(new OutputStreamWriter(outSocket.getOutputStream()));
+                out.println("" + data[0] + "," + clientAdress.toString().replaceAll("/", "") + "," + data[2]);
+            }
             out.flush();
             out.close();
             outSocket.close();
-            System.out.println("mainhandler sent connection");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

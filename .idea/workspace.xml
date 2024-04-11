@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff01fe48-27ce-4356-a26b-83b0057a2ab1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zad1/ClientServer/ClientServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zad1/ClientServer/ClientServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zad1/LangServer/LangHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zad1/LangServer/LangHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zad1/LangServer/LangServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zad1/LangServer/LangServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zad1/MainServer/MainHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zad1/MainServer/MainHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/zad1/MainServer/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/zad1/MainServer/MainServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,25 +40,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "last_opened_file_path": "D:/Studia/TPO/3/TPO3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Studia/TPO/3/TPO3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.ClientServer">
     <configuration name="ClientServer" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="zad1.ClientServer.ClientServer" />
@@ -116,7 +120,9 @@
       <workItem from="1712482102133" duration="632000" />
       <workItem from="1712593278854" duration="1241000" />
       <workItem from="1712598088449" duration="959000" />
-      <workItem from="1712650638876" duration="15331000" />
+      <workItem from="1712650638876" duration="15453000" />
+      <workItem from="1712696086568" duration="1532000" />
+      <workItem from="1712847521301" duration="2303000" />
     </task>
     <servers />
   </component>
